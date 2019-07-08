@@ -43,11 +43,107 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="btn btn-link-3" href="home.html">Home</a></li>
 						<li><a href="inscription.html">Inscription</a></li>
-						<li><a href="#" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#darkModalForm">Se Connecter</a></li>
+						<li><a href="#" class="btn btn-default btn-rounded" " data-toggle="modal" data-target="#loginModal">Se Connecter</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+		<!-- -Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+    	<div class="modal-content login-modal">
+      		<div class="modal-header login-modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<h4 class="modal-title text-center" id="loginModalLabel">USER AUTHENTICATION</h4>
+      		</div>
+      		<div class="modal-body">
+      			<div class="text-center">
+	      			<div role="tabpanel" class="login-tab">
+					  	<!-- Nav tabs -->
+					  	<ul class="nav nav-tabs" role="tablist">
+					    	<li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Se connecter</a></li>
+					    
+					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Mot de passe oublie</a></li>
+					  	</ul>
+					
+					  	<!-- Tab panes -->
+					 	<div class="tab-content">
+					    	<div role="tabpanel" class="tab-pane active text-center" id="home">
+					    		&nbsp;&nbsp;
+					    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
+					    		<div class="clearfix"></div>
+					    		<form>
+									<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+								      		<input type="text" class="form-control" id="login_username" placeholder="Email">
+								    	</div>
+								    	<span class="help-block has-error" id="email-error"></span>
+								  	</div>
+								  	<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+								      		<input type="password" class="form-control" id="password" placeholder="Mot de passe">
+								    	</div>
+								    	<span class="help-block has-error" id="password-error"></span>
+								  	</div>
+						  			<button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Connecter</button>
+						  			<div class="clearfix"></div>
+						  			<div class="login-modal-footer">
+						  				<div class="row">
+											<div class="col-xs-8 col-sm-8 col-md-8">
+												<i class="fa fa-lock"></i>
+												<a href="javascript:;" class="forgetpass-tab"> Mot de passe oublie? </a>
+											
+											</div>
+											
+											
+											
+											
+										</div>
+						  			</div>
+								</form>
+					    	</div>
+					    	<div role="tabpanel" class="tab-pane text-center" id="forget_password">
+					    		&nbsp;&nbsp;
+					    	    <span id="reset_fail" class="response_error" style="display: none;"></span>
+						    		<div class="clearfix"></div>
+						    		<form>
+										<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+									      		<input type="text" class="form-control" id="femail" placeholder="Email">
+									    	</div>
+									    	<span class="help-block has-error" data-error='0' id="femail-error"></span>
+									  	</div>
+									  	<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+									      		<input type="ID" class="form-control" id="ID" placeholder="ID bcskills">
+									    	</div>
+									    	<span class="help-block has-error" data-error='0' id="ID-error"></span>
+									  	</div>
+							  			<button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Resevoir le code</button>
+										<div class="clearfix"></div>
+										<div class="login-modal-footer">
+							  				<div class="row">
+												
+												
+												
+											</div>
+							  			</div>
+									</form>
+						    	</div>
+						  	</div>
+						</div>
+	      				
+	      			</div>
+	      		</div>
+	      		
+	    	</div>
+	   </div>
+ 	</div>
+ 	<!-- - Login Model Ends Here -->
     	<!-- Top content -->
         <div class="top-content">
         	<div class="container">
@@ -64,68 +160,7 @@
 				</div>
             </div>
         </div>
-        <!-- Modal -->
-<div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog form-dark" role="document">
-    <!--Content-->
-    <div class="modal-content card card-image" style="background-color:gray;">
-      <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
-        <!--Header-->
-        <div class="modal-header text-center pb-4">
-          <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong></strong> <a
-              class="green-text font-weight-bold"><strong> Connexion</strong></a></h3>
-          <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <!--Body-->
-        <div class="modal-body">
-          <!-- Body -->
-          <div class="md-form mb-5">
-          	<label data-error="wrong" data-success="right" for="Form-email5">Adresse E-mail</label>
-            <input type="email" id="Form-email5" class="form-control validate white-text" placeholder="xxxxxx@BCSkills.com">
-            
-          </div>
-
-          <div class="md-form pb-3">
-          	<label data-error="wrong" data-success="right" for="Form-pass5">mot de passe</label>
-            <input type="password" id="Form-pass5" class="form-control validate white-text" placeholder="**********">
-            <br>
-          </div>
-
-          <!--Grid row-->
-          <div class="row d-flex align-items-center mb-4">
-
-            <!--Grid column-->
-            <div class="text-center mb-3 col-md-12">
-              <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1">Se connecter</button>
-            </div>
-            <!--Grid column-->
-
-          </div>
-          <!--Grid row-->
-
-          <!--Grid row-->
-          <div class="row">
-
-            <!--Grid column-->
-            <div class="col-md-12">
-              <strong> <a href="#" class="green-text ml-1 font-weight-bold">mot de passe oublié ?</a></strong>
-                  
-            </div>
-            <!--Grid column-->
-
-          </div>
-          <!--Grid row-->
-
-        </div>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
-<!-- Modal -->
+       
         <!-- Features -->
         <div class="features-container section-container">
 	        <div class="container">
